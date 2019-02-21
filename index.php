@@ -4,8 +4,8 @@ DEFINE("ACCESS_TOKEN","FzoQyhCyuSQkvV2wjVRy9q552mygfFb8mNvQD8duXewvrL9Qss8PAV23H
 DEFINE("SECRET_TOKEN","77bdb3e28350efc68ddc6e184e09688f");
 
 require_once __DIR__ . ("/vendor/autoload.php");
-use \LINE\LINEbot\Constant\HTTPHeader;
-use \LINE\LINEbot\HTTPClient\CurlHTTPClient;
+//use \LINE\LINEbot\Constant\HTTPHeader;
+//use \LINE\LINEbot\HTTPClient\CurlHTTPClient;
 
 echo "Hello2";
 
@@ -18,7 +18,8 @@ error_log($inputString);
 //$httpClient = new CurlHTTPClient(ACCESS_TOKEN);
 
 $httpClinet = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(ACCESS_TOKEN);
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '77bdb3e28350efc68ddc6e184e09688f']);
+//$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '77bdb3e28350efc68ddc6e184e09688f']);
+$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
 
 $signature = $_SERVER['HTTP_'.HTTPHeader::LINE_SIGNATURE];
 $events = $bot->parseEventRequest(file_get_contents('php://input'),$signature);
