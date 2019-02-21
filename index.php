@@ -18,14 +18,18 @@ echo "Hello2";
 $inputString = file_get_contents('php://input');
 error_log($inputString);
 
-//$httpClient = new \LINE\LINEbot\HTTPClient\CurLHTTPClient(getenv
-//$httpClient = new CurLHTTPClient(getenv('CHANNEL_ACCCESS_TOKEN'));
-//$httpClient = new CurlHTTPClient(ACCESS_TOKEN);
 
-//$httpClinet = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(ACCESS_TOKEN);
+$channelSecret = '77bdb3e28350efc68ddc6e184e09688f';
+$channelToken  = 'FzoQyhCyuSQkvV2wjVRy9q552mygfFb8mNvQD8duXewvrL9Qss8PAV23HOe4icrcpN4LpwzpaY2uLlx9twkhn7xhN/ntkvnp+etRLrAxyib9nhzbPYgPsdyWEI00R/OsyMS8PTT7Np0Gty1UxGQjHQdB04t89/1O/w1cDnyilFU=';
+
+$bot = new LINEBot(new CurlHTTPClient($channelToken), [
+    'channelSecret' => $channelSecret
+]);
+
+
+
 $httpClinet = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('FzoQyhCyuSQkvV2wjVRy9q552mygfFb8mNvQD8duXewvrL9Qss8PAV23HOe4icrcpN4LpwzpaY2uLlx9twkhn7xhN/ntkvnp+etRLrAxyib9nhzbPYgPsdyWEI00R/OsyMS8PTT7Np0Gty1UxGQjHQdB04t89/1O/w1cDnyilFU=');
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '77bdb3e28350efc68ddc6e184e09688f']);
-//$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
+//$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '77bdb3e28350efc68ddc6e184e09688f']);
 
 $signature = $_SERVER['HTTP_'.HTTPHeader::LINE_SIGNATURE];
 $events = $bot->parseEventRequest(file_get_contents('php://input'),$signature);
