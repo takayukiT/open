@@ -20,6 +20,14 @@ error_log($inputString);
 $httpClinet = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(ACCESS_TOKEN);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => SECRET_TOKEN]);
 
+$signature = $_SERVER['HTTP_'.HTTPHeader::LINE_SIGNATURE];
+$events = $bot->parseEventRequest(file_get_contents('php://input'),$signature);
+foreach ($events as $event) {
+  // code...
+  $bot->replyTextMessage($event->getReplyToken(),'TextMessage');
+//replyTextMessage($bot, $event->getReplyToken(),'TextMessgage');
+}
+
 /*$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
 $signature = $_SERVER['HTTP_'.HTTPHeader::LINE_SIGNATURE];
 
