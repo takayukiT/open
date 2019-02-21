@@ -15,7 +15,8 @@ $signature = $_SERVER['HTTP_'.HTTPHeader::LINE_SIGNATURE];
 $events = $bot->parseEventRequest(file_get_contents('php://input'),$signature);
 foreach ($events as $event) {
   // code...
-  $bot->replyTextMessage($event->getReplyToken(),'TextMessage');
+//  $bot->replyTextMessage($event->getReplyToken(),'TextMessage');
+replyTextMessage($bot, $event->getReplyToken(),'TextMessgage');
 }
 
 function replyTextMessage($bot, $replyToken, $text){
