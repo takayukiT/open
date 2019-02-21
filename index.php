@@ -1,4 +1,7 @@
 <?php
+
+use \LINE\LINEbot\Constant\HTTPHeader;
+
 echo "Hello2";
 require_once __DIR__ . ("/vendor/autoload.php");
 
