@@ -16,7 +16,8 @@ error_log($inputString);
 //$httpClient = new \LINE\LINEbot\HTTPClient\CurLHTTPClient(getenv
 //$httpClient = new CurLHTTPClient(getenv('CHANNEL_ACCCESS_TOKEN'));
 $httpClient = new CurLHTTPClient(ACCESS_TOKEN);
-$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
+
+/*$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
 $signature = $_SERVER['HTTP_'.HTTPHeader::LINE_SIGNATURE];
 
 $events = $bot->parseEventRequest(file_get_contents('php://input'),$signature);
@@ -34,5 +35,6 @@ function replyTextMessage($bot, $replyToken, $text){
   . $response->getRawBody());
   }
 }
+*/
 
 ?>
