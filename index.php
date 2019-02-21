@@ -39,8 +39,9 @@ error_log($signature);
 $events = $bot->parseEventRequest(file_get_contents('php://input'),$signature);
 foreach ($events as $event) {
   // code...
+  $bot->replyText($event->getReplyToken(),'return-tsuchida');
 //  $bot->replyTextMessage($event->getReplyToken(),'TextMessage');
-replyTextMessage($bot, $event->getReplyToken(),'TextMessgage');
+//replyTextMessage($bot, $event->getReplyToken(),'TextMessgage');
 }
 }
 /*$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
