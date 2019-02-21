@@ -39,8 +39,8 @@ error_log($signature);
 $events = $bot->parseEventRequest(file_get_contents('php://input'),$signature);
 foreach ($events as $event) {
   // code...
-  $bot->replyTextMessage($event->getReplyToken(),'TextMessage');
-//replyTextMessage($bot, $event->getReplyToken(),'TextMessgage');
+//  $bot->replyTextMessage($event->getReplyToken(),'TextMessage');
+replyTextMessage($bot, $event->getReplyToken(),'TextMessgage');
 }
 }
 /*$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
@@ -52,7 +52,7 @@ foreach ($events as $event) {
 //  $bot->replyTextMessage($event->getReplyToken(),'TextMessage');
 replyTextMessage($bot, $event->getReplyToken(),'TextMessgage');
 }
-
+*/
 function replyTextMessage($bot, $replyToken, $text){
   $response = $bot->replyMessage($replyToken,new \LINE\LINEbot
   \MessageBuilder\TextMessageBuilder($text));
@@ -61,6 +61,6 @@ function replyTextMessage($bot, $replyToken, $text){
   . $response->getRawBody());
   }
 }
-*/
+
 
 ?>
