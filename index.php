@@ -1,5 +1,5 @@
 <?php
-echo "Hello2";
+echo "Hello3";
 require_once __DIR__ . 'vender/autoload.php';
 
 $inputString = file_get_contents('php://input');
