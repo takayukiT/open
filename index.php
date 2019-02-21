@@ -7,6 +7,11 @@ require_once __DIR__ . ("/vendor/autoload.php");
 //use \LINE\LINEbot\Constant\HTTPHeader;
 //use \LINE\LINEbot\HTTPClient\CurlHTTPClient;
 
+use LINE\LINEBot;
+use LINE\LINEBot\HTTPClient\CurlHTTPClient;
+use LINE\LINEBot\MessageBuilder\ImageMessageBuilder;
+use LINE\LINEBot\MessageBuilder\MultiMessageBuilder;
+
 echo "Hello2";
 
 
