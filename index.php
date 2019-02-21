@@ -1,7 +1,7 @@
 <?php
 
 DEFINE("ACCESS_TOKEN","FzoQyhCyuSQkvV2wjVRy9q552mygfFb8mNvQD8duXewvrL9Qss8PAV23HOe4icrcpN4LpwzpaY2uLlx9twkhn7xhN/ntkvnp+etRLrAxyib9nhzbPYgPsdyWEI00R/OsyMS8PTT7Np0Gty1UxGQjHQdB04t89/1O/w1cDnyilFU=");
-//DEFINE("SECRET_TOKEN","ここにシークレットトークン");
+DEFINE("SECRET_TOKEN","77bdb3e28350efc68ddc6e184e09688f");
 
 require_once __DIR__ . ("/vendor/autoload.php");
 use \LINE\LINEbot\Constant\HTTPHeader;
@@ -18,6 +18,7 @@ error_log($inputString);
 //$httpClient = new CurlHTTPClient(ACCESS_TOKEN);
 
 $httpClinet = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(ACCESS_TOKEN);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => SECRET_TOKEN]);
 
 /*$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
 $signature = $_SERVER['HTTP_'.HTTPHeader::LINE_SIGNATURE];
