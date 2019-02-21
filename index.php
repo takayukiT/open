@@ -18,8 +18,8 @@ error_log($inputString);
 //$httpClient = new CurlHTTPClient(ACCESS_TOKEN);
 
 $httpClinet = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(ACCESS_TOKEN);
-//$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '77bdb3e28350efc68ddc6e184e09688f']);
-$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '77bdb3e28350efc68ddc6e184e09688f']);
+//$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
 
 $signature = $_SERVER['HTTP_'.HTTPHeader::LINE_SIGNATURE];
 $events = $bot->parseEventRequest(file_get_contents('php://input'),$signature);
