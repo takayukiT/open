@@ -11,6 +11,7 @@ use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use LINE\LINEBot\MessageBuilder\ImageMessageBuilder;
 use LINE\LINEBot\MessageBuilder\MultiMessageBuilder;
+use \LINE\LINEbot\Constant\HTTPHeader;
 
 echo "Hello2";
 
