@@ -31,6 +31,8 @@ $bot = new LINEBot(new CurlHTTPClient($channelToken), [
 //$httpClinet = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('FzoQyhCyuSQkvV2wjVRy9q552mygfFb8mNvQD8duXewvrL9Qss8PAV23HOe4icrcpN4LpwzpaY2uLlx9twkhn7xhN/ntkvnp+etRLrAxyib9nhzbPYgPsdyWEI00R/OsyMS8PTT7Np0Gty1UxGQjHQdB04t89/1O/w1cDnyilFU=');
 //$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '77bdb3e28350efc68ddc6e184e09688f']);
 //$bot->parseEventRequest
+
+if(isset($_SERVER["HTTP_".HTTPHeader::LINE_SIGNATURE]) ) {
 $signature = $_SERVER["HTTP_" . HTTPHeader::LINE_SIGNATURE];
 error_log($signature);
 //$events = $bot->parseEventRequest(file_get_contents())
@@ -40,7 +42,7 @@ foreach ($events as $event) {
   $bot->replyTextMessage($event->getReplyToken(),'TextMessage');
 //replyTextMessage($bot, $event->getReplyToken(),'TextMessgage');
 }
-
+}
 /*$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
 $signature = $_SERVER['HTTP_'.HTTPHeader::LINE_SIGNATURE];
 
