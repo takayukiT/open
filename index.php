@@ -5,7 +5,7 @@ DEFINE("ACCESS_TOKEN","FzoQyhCyuSQkvV2wjVRy9q552mygfFb8mNvQD8duXewvrL9Qss8PAV23H
 
 require_once __DIR__ . ("/vendor/autoload.php");
 use \LINE\LINEbot\Constant\HTTPHeader;
-use \LINE\LINEbot\HTTPClient\CurLHTTPClient;
+use \LINE\LINEbot\HTTPClient\CurlHTTPClient;
 
 echo "Hello2";
 
@@ -15,7 +15,7 @@ error_log($inputString);
 
 //$httpClient = new \LINE\LINEbot\HTTPClient\CurLHTTPClient(getenv
 //$httpClient = new CurLHTTPClient(getenv('CHANNEL_ACCCESS_TOKEN'));
-$httpClient = new CurLHTTPClient(ACCESS_TOKEN);
+$httpClient = new CurlHTTPClient(ACCESS_TOKEN);
 
 /*$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
 $signature = $_SERVER['HTTP_'.HTTPHeader::LINE_SIGNATURE];
