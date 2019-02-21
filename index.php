@@ -15,7 +15,9 @@ error_log($inputString);
 
 //$httpClient = new \LINE\LINEbot\HTTPClient\CurLHTTPClient(getenv
 //$httpClient = new CurLHTTPClient(getenv('CHANNEL_ACCCESS_TOKEN'));
-$httpClient = new CurlHTTPClient(ACCESS_TOKEN);
+//$httpClient = new CurlHTTPClient(ACCESS_TOKEN);
+
+$httpClinet = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(ACCESS_TOKEN);
 
 /*$bot = new \LINE\LINEbot($httpClient,['channelSecret'=>getenv('channel_SECRET')]);
 $signature = $_SERVER['HTTP_'.HTTPHeader::LINE_SIGNATURE];
