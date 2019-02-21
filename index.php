@@ -18,5 +18,13 @@ foreach ($events as $event) {
   $bot->replyTextMessage($event->getReplyToken(),'TextMessage');
 }
 
+function replyTextMessage($bot, $replyToken, $text){
+  $response = $bot->replyMessage($replyToken,new \LINE\LINEbot
+  \MessageBuilder\TextMessageBuilder($text));
+  if(!$response->isSucceeded()){
+    error_log('Failed '. $response->getHTTPStatus . ' '
+  . $response->getRawBody());
+  }
+}
 
 ?>
