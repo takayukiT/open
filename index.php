@@ -47,7 +47,7 @@ foreach ($events as $event) {
   $reply_token  = $event['replyToken'];
 
   $headers = array('Content-Type: application/json',
-                   'Authorization: Bearer ' . $accessToken);
+                   'Authorization: Bearer ' . $channelToken);
 
 //  $message = 【ここが送信するオブジェクトにより異なります】
 
