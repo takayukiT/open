@@ -51,9 +51,12 @@ foreach ($events as $event) {
 
 //  $message = 【ここが送信するオブジェクトにより異なります】
 
-  $message = array('type'               => 'image',
-                   'originalContentUrl' => 'https://kosenjp-my.sharepoint.com/:i:/g/personal/tsuchida_toba_kosen-ac_jp/EWqdgG77ZCtLqLwldvNPeM4Bb68DYlax5jq-6UYPfSop4A?e=HaTfBb',
-                   'previewImageUrl'    => 'https://kosenjp-my.sharepoint.com/:i:/g/personal/tsuchida_toba_kosen-ac_jp/EWqdgG77ZCtLqLwldvNPeM4Bb68DYlax5jq-6UYPfSop4A?e=HaTfBb');
+//  $message = array('type'               => 'image',
+//                   'originalContentUrl' => 'https://kosenjp-my.sharepoint.com/:i:/g/personal/tsuchida_toba_kosen-ac_jp/EWqdgG77ZCtLqLwldvNPeM4Bb68DYlax5jq-6UYPfSop4A?e=HaTfBb',
+//                   'previewImageUrl'    => 'https://kosenjp-my.sharepoint.com/:i:/g/personal/tsuchida_toba_kosen-ac_jp/EWqdgG77ZCtLqLwldvNPeM4Bb68DYlax5jq-6UYPfSop4A?e=HaTfBb');
+
+$message = array('type' => 'text',
+                 'text' => 'こんにちは。テキスト応答ですよ。');
 
   $body = json_encode(array('replyToken' => $reply_token,
                             'messages'   => array($message)));
