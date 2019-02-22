@@ -34,8 +34,8 @@ foreach ($events as $event) {
 //$bot->replyText($event->getReplyToken(),'return-tsuchidaB');
   $messageBuilder = new MultiMessageBuilder();
   $messageBuilder->add(new ImageMessageBuilder(
-    "https://drive.google.com/open?id=1ayLfF-blv4SR79_hYpWSxIVwBq6nB4Qv",
-    "https://drive.google.com/open?id=1ayLfF-blv4SR79_hYpWSxIVwBq6nB4Qv"
+    "https://drive.google.com/file/d/1ayLfF-blv4SR79_hYpWSxIVwBq6nB4Qv/view?usp=sharing",
+    "https://drive.google.com/file/d/1ayLfF-blv4SR79_hYpWSxIVwBq6nB4Qv/view?usp=sharing"
 ));
   //$bot->replyMessage($event->replyToken, $messageBuilder);
   $bot->replyMessage($event->getReplyToken(), $messageBuilder);
