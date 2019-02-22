@@ -35,8 +35,8 @@ foreach ($events as $event) {
 //  $messageBuilder = new MultiMessageBuilder();
 //  $messageBuilder->add(new ImageMessageBuilder(
 $messageBuilder=new ImageMessageBuilder(
-    "https://drive.google.com/file/d/1ayLfF-blv4SR79_hYpWSxIVwBq6nB4Qv/view?usp=sharing",
-    "https://drive.google.com/file/d/1ayLfF-blv4SR79_hYpWSxIVwBq6nB4Qv/view?usp=sharing"
+    "https://kosenjp-my.sharepoint.com/:i:/g/personal/tsuchida_toba_kosen-ac_jp/EU9o3pg6C8JFuqBrKQJF7ZcBErN7oh6EUSEQFAjKWKG64A?e=zd1vpW",
+    "https://kosenjp-my.sharepoint.com/:i:/g/personal/tsuchida_toba_kosen-ac_jp/EU9o3pg6C8JFuqBrKQJF7ZcBErN7oh6EUSEQFAjKWKG64A?e=zd1vpW"
 );
   //$bot->replyMessage($event->replyToken, $messageBuilder);
   $bot->replyMessage($event->getReplyToken(), $messageBuilder);
