@@ -27,7 +27,13 @@ error_log($signature);
 $events = $bot->parseEventRequest(file_get_contents('php://input'),$signature);
 foreach ($events as $event) {
   // code...
-  $bot->replyText($event->getReplyToken(),'return-tsuchida');
+  if($event->gettext()=="A"){
+   $bot->replyText($event->getReplyToken(),'return-tsuchidaA');
+  }
+  else {
+$bot->replyText($event->getReplyToken(),'return-tsuchidaB');
+  }
+
 
 }
 }
