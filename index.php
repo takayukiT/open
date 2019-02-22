@@ -32,11 +32,12 @@ foreach ($events as $event) {
   }
   else {
 //$bot->replyText($event->getReplyToken(),'return-tsuchidaB');
-  $messageBuilder = new MultiMessageBuilder();
-  $messageBuilder->add(new ImageMessageBuilder(
+//  $messageBuilder = new MultiMessageBuilder();
+//  $messageBuilder->add(new ImageMessageBuilder(
+$messageBuilder=new ImageMessageBuilder(
     "https://drive.google.com/file/d/1ayLfF-blv4SR79_hYpWSxIVwBq6nB4Qv/view?usp=sharing",
     "https://drive.google.com/file/d/1ayLfF-blv4SR79_hYpWSxIVwBq6nB4Qv/view?usp=sharing"
-));
+);
   //$bot->replyMessage($event->replyToken, $messageBuilder);
   $bot->replyMessage($event->getReplyToken(), $messageBuilder);
   }
