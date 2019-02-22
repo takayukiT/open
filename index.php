@@ -31,7 +31,13 @@ foreach ($events as $event) {
    $bot->replyText($event->getReplyToken(),'return-tsuchidaA');
   }
   else {
-$bot->replyText($event->getReplyToken(),'return-tsuchidaB');
+//$bot->replyText($event->getReplyToken(),'return-tsuchidaB');
+  $messageBuilder = new MultiMessageBuilder();
+  $messageBuilder->add(new ImageMessageBuilder(
+    "https://github.com/takayukiT/first-app-tsuchida/blob/master/fish_image.png",
+    "https://github.com/takayukiT/first-app-tsuchida/blob/master/fish_image.png"
+));
+  $bot->replyMessage($event->replyToken, $messageBuilder);
   }
 
 
