@@ -37,7 +37,8 @@ foreach ($events as $event) {
     "https://github.com/takayukiT/first-app-tsuchida/blob/master/fish_image.png",
     "https://github.com/takayukiT/first-app-tsuchida/blob/master/fish_image.png"
 ));
-  $bot->replyMessage($event->replyToken, $messageBuilder);
+  //$bot->replyMessage($event->replyToken, $messageBuilder);
+  $bot->replyMessage($event->getReplyToken(), $messageBuilder);
   }
 
 
